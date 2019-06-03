@@ -17,3 +17,5 @@
 ![Finale Diagram-Music](https://user-images.githubusercontent.com/44457545/58815771-33432c00-85f6-11e9-8181-2668b5f870a4.png)
 
 ![Finale Diagram-Login_Signup](https://user-images.githubusercontent.com/44457545/58815808-4950ec80-85f6-11e9-898c-2800e39adb79.png)
+
+![Component hierachy Diagram](https://user-images.githubusercontent.com/44457545/58828624-dc4c4f80-8613-11e9-9603-862ed30c1421.jpg)
