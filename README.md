@@ -15,3 +15,5 @@
 ![Finale Diagram-Account](https://user-images.githubusercontent.com/44457545/58815600-e4959200-85f5-11e9-8dff-edc6860afa91.png)
 
 ![Finale Diagram-Music](https://user-images.githubusercontent.com/44457545/58815771-33432c00-85f6-11e9-8181-2668b5f870a4.png)
+
+![Finale Diagram-Login_Signup](https://user-images.githubusercontent.com/44457545/58815808-4950ec80-85f6-11e9-898c-2800e39adb79.png)
