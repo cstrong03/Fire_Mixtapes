@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :tracks
+  resources :tracks 
 
-  root to: "tracks#index"
 
     scope '/user' do
     resources :tracks
