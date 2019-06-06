@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :update, :destroy]
+
   def index
     @tracks = Track.all
     render json: @tracks, status: :ok

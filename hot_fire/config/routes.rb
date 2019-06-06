@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :tracks 
 
+  resources :tracks
 
-    scope '/user' do
+  scope '/user' do
     resources :tracks
   end
+
 end
