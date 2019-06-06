@@ -14,3 +14,21 @@ export const fetchTracks = async()=>{
     console.log(e);
   }
 }
+
+export const getTrack = async(id)=>{
+  try {
+    const resp = await api.get(`/${id}`)
+    return resp.data;
+  } catch (e) {
+    console.log(e);
+  }
+}
+export const createTrack = async (data) =>{
+  try {
+    const resp = await api.post('/', data)
+    console.log(resp)
+    return resp.data
+  } catch (e) {
+    console.log(e);
+  }
+}

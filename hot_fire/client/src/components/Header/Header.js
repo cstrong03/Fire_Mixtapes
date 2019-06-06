@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Header extends Component{
   render(){
     return(
       <div>
-        <nav>Home</nav>
-        <nav>Tracks</nav>
-        <nav>Help</nav>
+        <nav>
+          <Link to={'/'}>Home</Link>
+          <Link to={'/create-track'}>Upload</Link>
+        </nav>
       </div>
     )
   }

@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import TracksList from './components/TracksList/TracksList'
+import TrackPage from './components/TrackPage/TrackPage'
+import CreateTrack from './components/CreateTrack/CreateTrack'
 import { fetchTracks } from './services/ApiHelper'
 
 class App extends Component {
@@ -11,7 +13,8 @@ class App extends Component {
     super();
     this.state = {
       tracks: null,
-      apiDataLoaded: false
+      apiDataLoaded: false,
+      currentTrack: {}
     }
   }
 
@@ -27,6 +30,12 @@ class App extends Component {
     this.getTrackData();
   }
 
+  setCurrentTrack = (track) =>{
+    this.setState({
+      currentTrack: track
+    })
+  }
+
   render(){
     console.log(this.state)
 
@@ -35,9 +44,19 @@ class App extends Component {
         <Header />
         <Switch>
           <Route
-            path = '/tracks'
-            render={()=> <TracksList tracks={this.state.tracks}/>}
+            exact path = '/'
+            render={()=> <TracksList tracks={this.state.tracks}
+                                      setCurrentTrack={this.setCurrentTrack}/>}
           />
+          <Route
+            path = '/tracks/:id'
+            render={()=> <TrackPage tracks={this.state.tracks}
+                                    setCurrentTrack={this.setCurrentTrack}
+                                    currentTrack={this.state.currentTrack}/>}
+          />
+
+          <Route path='/create-track'
+                 component={CreateTrack} />
         </Switch>
       </div>
     );

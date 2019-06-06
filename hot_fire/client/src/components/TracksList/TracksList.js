@@ -2,14 +2,17 @@ import React from 'react'
 
 import Track from '../Track/Track'
 
-const TracksList = ({tracks}) =>{
+const TracksList = (props) => {
 
-  const data = tracks && tracks.map(track => {
-    return <Track key={track.id} track={track} />
-  })
+  console.log(props)
+  
+  const data = props.tracks && props.tracks.map(track =>
+    <Track key={track.id} track={track} setCurrentTrack={props.setCurrentTrack} />
+  )
 
   return(
     <div>{data}</div>
+
   )
 }
 

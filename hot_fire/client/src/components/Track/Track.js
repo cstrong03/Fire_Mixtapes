@@ -1,15 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Track = ({track}) =>{
 
-
+const Track = ({track, setCurrentTrack}) =>{
+  console.log(track)
   return(
     <div>
+      <Link to={`/tracks/${track.id}`}
+            onClick={() => setCurrentTrack(track)}>
       <h1>{track.song_title}</h1>
-      <h4>{track.artist}</h4>
-      <img src={track.album}
-      alt="album cover"
-      />
+      </Link>
     </div>
   )
 }
