@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import './App.css';
-import { Router, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import TracksList from './components/TracksList/TracksList'
 import { fetchTracks } from './services/ApiHelper'
@@ -33,8 +33,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Switch></Switch>
-        <TracksList tracks={this.state.tracks}/>
+        <Switch>
+          <Route
+            path = '/tracks'
+            render={()=> <TracksList tracks={this.state.tracks}/>}
+          />
+        </Switch>
       </div>
     );
   }

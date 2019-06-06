@@ -1,8 +1,15 @@
 import React from 'react'
 
-const TracksList = ()=>{
+import Track from '../Track/Track'
+
+const TracksList = ({tracks}) =>{
+
+  const data = tracks && tracks.map(track => {
+    return <Track key={track.id} track={track} />
+  })
+
   return(
-    <div>I am the tracks list</div>
+    <div>{data}</div>
   )
 }
 

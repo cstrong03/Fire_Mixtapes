@@ -9,7 +9,6 @@ const api = axios.create({
 export const fetchTracks = async()=>{
   try {
     const resp = await api.get('/')
-    console.log(resp);
     return resp.data;
   } catch (e) {
     console.log(e);
