@@ -7,13 +7,14 @@ class CreateTrack extends Component {
     super(props);
     this.state = {
       track: [],
-      created: false
+      created: false,
+      user_id: 1
     }
   }
 
-  onTrackForm = (event) => {
+  onTrackFormChange = (event) => {
     const element = event.target
-    const title = element.title
+    const title = element.name
     const value = element.value
 
     this.setState({[title]: value})
@@ -24,32 +25,33 @@ class CreateTrack extends Component {
     console.log(`form submitted`);
 
     let newTrack = {
-      title: this.state.title,
+      song_title: this.state.title,
       artist: this.state.artist,
-      album: this.state.artist
+      album: this.state.album,
+      user_id: this.state.user_id
     }
 
     const track = await createTrack(newTrack)
 
-    this.setstate({
+    this.setState({
       track:track,
       created:true
     })
     if (this.setState.created === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/tracks' />
     }
   }
   render(){
     return(
       <div>
-        <form>
+        <form onSubmit = {this.onTrackFormSubmit}>
           <div>
             <label htmlFor="name">Track Name</label>
             <input
             id="name"
             type="text"
-            name="name"
-            onChange=''
+            name="title"
+            onChange={this.onTrackFormChange}
             placeholder="song title"/>
           </div>
           <div>
@@ -57,18 +59,18 @@ class CreateTrack extends Component {
             <input
             id="name"
             type="text"
-            name="name"
-            onChange=''
+            name="artist"
+            onChange={this.onTrackFormChange}
             placeholder="Artist Name"/>
           </div>
           <div>
             <label htmlFor="name">Album</label>
             <input
             id="name"
-            type="file"
-            name="name"
-            onChange=''
-              />
+            type="text"
+            name="album"
+            onChange={this.onTrackFormChange}
+              placeholder="img url"/>
           </div>
             <div>
               <button type="submit">Upload Track </button>

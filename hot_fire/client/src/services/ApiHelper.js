@@ -32,3 +32,12 @@ export const createTrack = async (data) =>{
     console.log(e);
   }
 }
+
+export const editTrack = async (id, data) => {
+  try {
+    const resp = await api.put(`/${id}`, data)
+    return resp.data
+  } catch (e) {
+    console.log(e);
+  }
+}
