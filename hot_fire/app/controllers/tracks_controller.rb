@@ -26,11 +26,10 @@ class TracksController < ApplicationController
   end
 
   def update
-    begin
-     @track.update(track_params)
+    if @track.update(track_params)
       render json: @track, status: :ok
-    rescue ActiveRecord::RecordNotFound
-      render json: { errors: @track.errors }, status: :unprocessable_entity
+    else
+      render json: {errors: @track.errors}, status: :unprocessable_entity
     end
   end
 

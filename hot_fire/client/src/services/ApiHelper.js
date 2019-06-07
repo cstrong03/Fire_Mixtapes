@@ -33,10 +33,19 @@ export const createTrack = async (data) =>{
   }
 }
 
-export const editTrack = async (id, data) => {
+export const updateTrack = async (id, data) => {
   try {
     const resp = await api.put(`/${id}`, data)
-    return resp.data
+    console.log(resp);
+    return resp.data.tracks
+  } catch (e) {
+    console.log(e);
+  }
+}
+export const deleteTrack = async (id) => {
+  try {
+    const resp = await api.delete(`/${id}`)
+    return resp
   } catch (e) {
     console.log(e);
   }

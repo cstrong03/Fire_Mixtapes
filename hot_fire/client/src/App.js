@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import TracksList from './components/TracksList/TracksList'
 import TrackPage from './components/TrackPage/TrackPage'
 import CreateTrack from './components/CreateTrack/CreateTrack'
+import UpdateTrack from './components/UpdateTrack/UpdateTrack'
 import { fetchTracks } from './services/ApiHelper'
 
 class App extends Component {
@@ -20,7 +21,12 @@ class App extends Component {
 
   getTrackData = async () =>{
     const tracks = await fetchTracks();
-    this.setState({
+    tracks.forEach( track => {
+      track.isEditable = false
+    }
+
+    )
+    await this.setState({
       tracks: tracks,
       apiDataLoaded: true
     })
@@ -30,6 +36,14 @@ class App extends Component {
     this.getTrackData();
   }
 
+  toggleEdit = async (e,index) => {
+    let {currentTrack} = this.state
+    currentTrack.isEditable = !currentTrack.isEditable
+
+    await this.setState({
+      currentTrack
+    })
+  }
   setCurrentTrack = (track) =>{
     this.setState({
       currentTrack: track
@@ -37,8 +51,6 @@ class App extends Component {
   }
 
   render(){
-    console.log(this.state)
-
     return (
       <div className="App">
         <Header />
@@ -50,13 +62,20 @@ class App extends Component {
           />
           <Route
             path = '/tracks/:id'
-            render={()=> <TrackPage tracks={this.state.tracks}
+            render={(m)=> <TrackPage tracks={this.state.tracks}
                                     setCurrentTrack={this.setCurrentTrack}
-                                    currentTrack={this.state.currentTrack}/>}
+                                    currentTrack={this.state.currentTrack}
+                                    toggleEdit={this.toggleEdit}
+                                    m={m}/>}
           />
 
           <Route path='/create-track'
                  component={CreateTrack} />
+
+          <Route path="/update-track/:id"
+                   render={() => <UpdateTrack tracks={this.state.tracks}
+                                              currentTrack={this.state.currentTrack}/>}
+                  />
         </Switch>
       </div>
     );

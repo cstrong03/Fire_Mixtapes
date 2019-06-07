@@ -1,17 +1,32 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import UpdateTrack from '../UpdateTrack/UpdateTrack'
+import { deleteTrack } from '../../services/ApiHelper'
 
-const TrackPage = ({currentTrack}) => {
+const TrackPage = ({track, currentTrack,trackIndex, toggleEdit}) => {
 
-  console.log(currentTrack)
 
+
+  const page = currentTrack.isEditable
+  ? <UpdateTrack currentTrack={currentTrack} trackIndex={trackIndex}/>
+    : <div>
+        <h2>{currentTrack.song_title}</h2>
+        <h4>{currentTrack.artist}</h4>
+        <img src={currentTrack.album}alt="track"/>
+        <button onClick={(e)=> toggleEdit(e, trackIndex)}>edit</button>
+        <button onClick={()=> deleteATrack()}>delete</button>
+  </div>
+
+  const deleteATrack = async () => {
+        await deleteTrack(this.currentTrack.id)
+        document.location.reload();
+    }
   return(
     <div>
-      <h2>{currentTrack.song_title}</h2>
-      <h4>{currentTrack.artist}</h4>
-      <img />
+    {page}
     </div>
   )
 }
+
+
 
 export default TrackPage;
