@@ -24,8 +24,7 @@ class App extends Component {
     tracks.forEach( track => {
       track.isEditable = false
     }
-
-    )
+  )
     await this.setState({
       tracks: tracks,
       apiDataLoaded: true

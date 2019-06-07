@@ -72,6 +72,15 @@ class CreateTrack extends Component {
             onChange={this.onTrackFormChange}
               placeholder="img url"/>
           </div>
+          <div>
+            <label htmlFor="name">Insert Song</label>
+            <input
+            id="name"
+            type="file" accept=".mp3 .mp4"
+            name="album"
+            onChange={this.onTrackFormChange}
+              placeholder="img url"/>
+          </div>
             <div>
               <button type="submit">Upload Track </button>
             </div>
