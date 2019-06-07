@@ -37,7 +37,8 @@ class UpdateTrack extends Component {
 
     this.setState({
       currentTrack: track,
-      updated: true
+      updated: true,
+
     })
   }
   render(){

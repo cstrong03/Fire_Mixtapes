@@ -17,7 +17,7 @@ const TrackPage = ({track, currentTrack,trackIndex, toggleEdit}) => {
   </div>
 
   const deleteATrack = async () => {
-        await deleteTrack(this.currentTrack.id)
+        await deleteTrack(currentTrack.id)
         document.location.reload();
     }
   return(
