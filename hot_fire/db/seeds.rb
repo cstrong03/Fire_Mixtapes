@@ -19,4 +19,4 @@ track4 = Track.create(song_title: "Hotline Bling", artist: "Drake", album: "http
 track5 = Track.create(song_title: "Old Town Road", artist: "Lil Nas X ft. Billy Ray Cyrus", album: "https://i.imgur.com/zWNYHXd.jpg", user_id: 4)
 track6 = Track.create(song_title: "7 Rings", artist: "Ariana Grande", album: "https://i.imgur.com/vuqs90x.jpg", user_id: 1)
 track7 = Track.create(song_title: "Fall", artist: "Davido", album: "https://i.imgur.com/cKc3oCS.jpg", user_id: 1)
-track8 = Track.create(song_title: "Nails, Hair, Hip, Heekls", artist: "Todrick Hall", album: "https://i.imgur.com/QYv1kfI.jpg", user_id: 2)
+track8 = Track.create(song_title: "Nails, Hair, Hip, Heeks", artist: "Todrick Hall", album: "https://i.imgur.com/QYv1kfI.jpg", user_id: 2)

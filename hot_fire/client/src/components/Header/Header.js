@@ -5,9 +5,10 @@ class Header extends Component{
   render(){
     return(
       <div>
-        <nav>
-          <Link to={'/tracks'}>Home</Link>
-          <Link to={'/create-track'}>Upload</Link>
+        <nav className="Nav">
+          <Link className="babyNav" to={'/tracks'}>Home</Link>
+          <Link className="babyNav" to={'/about'}>About</Link>
+          <Link className="babyNav" to={'/create-track'}>Upload</Link>
         </nav>
       </div>
     )

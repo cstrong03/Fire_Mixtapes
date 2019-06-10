@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
+import About from './components/About/About'
 import TrackList from './components/TrackList/TrackList'
 import TrackPage from './components/TrackPage/TrackPage'
 import CreateTrack from './components/CreateTrack/CreateTrack'
@@ -52,13 +53,17 @@ class App extends Component{
 
   render(){
     return (
-      <div className="App">
+      <div>
         <Header />
         <Switch>
           <Route exact path='/tracks'
                  render={()=> <TrackList tracks={this.state.tracks}
                                          setCurrentTrack={this.setCurrentTrack} />}
                                          />
+
+          <Route path='/about'
+                 component={About} />
+
           <Route path='/tracks/:id'
                  render={(m)=> <TrackPage tracks={this.state.tracks}
                                           setCurrentTrack={this.setCurrentTrack}
@@ -68,6 +73,8 @@ class App extends Component{
                                           />
           <Route path='/create-track'
                  component={CreateTrack}/>
+
+
           <Route path='/update-track/:id'
                   render={()=> <UpdateTrack tracks={this.state.tracks}
                                             currentTrack={this.state.currentTrack} />}

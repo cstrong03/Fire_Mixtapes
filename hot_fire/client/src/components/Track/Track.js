@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Track =({track, setCurrentTrack})=>{
   return(
-    <div>
+    <div className="all">
       <Link to={`/tracks/${track.id}`}
       onClick={()=> setCurrentTrack(track)}>
-      <h1>{track.song_title}</h1>
+      <img className="display" src={track.album} alt="cover art"/>
+      <h1 className="display">{track.song_title}</h1>
       </Link>
     </div>
   )
