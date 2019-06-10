@@ -68,7 +68,7 @@ class CreateTrack extends Component {
           </div>
           <div>
             <label className="formDetail" htmlFor="name">Album</label>
-            <Form.Input
+            <input
             id="name"
             type="text"
             name="album"

@@ -2,6 +2,7 @@ import React from 'react'
 import UpdateTrack from '../UpdateTrack/UpdateTrack'
 import { deleteTrack } from '../../services/ApiHelper'
 import { Button } from 'semantic-ui-react'
+import Sound from '../../Assets/Sound.js'
 
 const Trackpage = ({track, currentTrack, trackIndex, toggleEdit}) =>{
 
