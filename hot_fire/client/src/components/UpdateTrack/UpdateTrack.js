@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import { updateTrack } from '../../services/ApiHelper'
+import { Form } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 class UpdateTrack extends Component{
   constructor(props){
@@ -40,10 +41,10 @@ class UpdateTrack extends Component{
   render(){
     return(
       <div>
-        <form onSubmit={this.handleTrackSubmit}>
+        <Form onSubmit={this.handleTrackSubmit}>
           <div>
             <label htmlFor="name">Track Name</label>
-            <input
+            <Form.Input
             id="name"
             type="text"
             name="title"
@@ -53,7 +54,7 @@ class UpdateTrack extends Component{
             </div>
           <div>
             <label htmlFor="name">Artist</label>
-            <input
+            <Form.Input
             id="name"
             type="text"
             name="artist"
@@ -62,7 +63,7 @@ class UpdateTrack extends Component{
             </div>
           <div>
             <label htmlFor="name">Album</label>
-            <input
+            <Form.Input
             id="name"
             type="text"
             name="album"
@@ -70,9 +71,9 @@ class UpdateTrack extends Component{
             placeholder="Insert Album ArtWork"/>
             </div>
             <div>
-              <button type="submit">Add Changes</button>
+              <Button type="submit">Add Changes</Button>
             </div>
-          </form>
+          </Form>
       </div>
     )
   }

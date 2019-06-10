@@ -45,9 +45,6 @@ img{
 .button1{
   margin-top: 2%;
 }
-.current{
-
-}
 .song{
   display: flex;
   justify-content: center;
@@ -55,4 +52,19 @@ img{
 }
 .image{
   margin-left: 25%;
+}
+.progress{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  flex: 1;
+}
+.text{
+  flex: 1;
+  font-size: 15pt;
+  color: #b76e79;
+  font-weight: bold;
+  font-family: 'Indie Flower', cursive;
 }
