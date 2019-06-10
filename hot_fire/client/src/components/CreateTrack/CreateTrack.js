@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { createTrack } from '../../services/ApiHelper'
+import 'semantic-ui-css/semantic.min.css'
+import { Form } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 class CreateTrack extends Component {
   constructor(props) {
@@ -43,11 +46,11 @@ class CreateTrack extends Component {
   }
   render(){
     return(
-      <div>
-        <form onSubmit = {this.onTrackFormSubmit}>
+      <div className="formDetail">
+        <Form onSubmit = {this.onTrackFormSubmit}>
           <div>
-            <label htmlFor="name">Track Name</label>
-            <input
+            <label className="formDetail" htmlFor="name">Track Name</label>
+            <Form.Input
             id="name"
             type="text"
             name="title"
@@ -55,8 +58,8 @@ class CreateTrack extends Component {
             placeholder="song title"/>
           </div>
           <div>
-            <label htmlFor="name">Artist</label>
-            <input
+            <label className="formDetail" htmlFor="name">Artist</label>
+            <Form.Input
             id="name"
             type="text"
             name="artist"
@@ -64,18 +67,18 @@ class CreateTrack extends Component {
             placeholder="Artist name"/>
           </div>
           <div>
-            <label htmlFor="name">Album</label>
-            <input
+            <label className="formDetail" htmlFor="name">Album</label>
+            <Form.Input
             id="name"
             type="text"
             name="album"
             onChange={this.onTrackFormChange}
             placeholder="Insert Album ArtWork" />
           </div>
-          <div>
-            <button type="submit">Upload Track</button>
+          <div className="button1">
+            <Button type="submit">Upload Track</Button>
           </div>
-        </form>
+        </Form>
       </div>
     )
   }

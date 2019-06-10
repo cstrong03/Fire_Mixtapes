@@ -1,4 +1,4 @@
-body{
+*{
   background-color: rgb(167, 165, 165)
 }
 .Nav {
@@ -17,15 +17,42 @@ body{
   display: flex;
 }
 .work{
+  margin-top: 5%;
   flex: auto;
 }
 img{
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
 }
-.all{
+.track{
   display: flex;
+  text-decoration: none;
+  margin-top: 5%;
+  justify-content: center;
+  text-align: center;
 }
-.display{
+.trackDisplay{
   flex: 1;
+  text-decoration: none;
+  justify-content: center;
+  font-family: 'Indie Flower', cursive;
+}
+.formDetail{
+  margin-top: 2%;
+  font-size: 15pt;
+  font-family: 'Indie Flower', cursive;
+}
+.button1{
+  margin-top: 2%;
+}
+.current{
+
+}
+.song{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image{
+  margin-left: 25%;
 }
